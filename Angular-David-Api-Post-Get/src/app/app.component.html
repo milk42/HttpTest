@@ -1,0 +1,30 @@
+<div class="container">
+  <mat-toolbar>
+     <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="app-name">Responsive App</h1>
+  </mat-toolbar>
+
+   <mat-sidenav-container  class="sidenav-container">
+    <mat-sidenav  mode="push" fullscreen #snav class="sidenav">
+      <mat-nav-list>  
+
+        <a href="" [routerLink]="['/users', {title:'Composant User'}]" mat-list-item>Users</a>
+        <a href="" [routerLink]="['/posts', {title:'Composant Post'}]" mat-list-item>Posts</a>
+        <a href="" [routerLink]="['/posts', {title:'Composant Posts'}]" mat-list-item>Posts</a> 
+
+         <!-- <a href="" mat-list-item>Test 1</a>
+        <a href="" mat-list-item>Test 2</a>
+        <a href="" mat-list-item>Test 3</a> -->
+      </mat-nav-list>
+    </mat-sidenav> 
+     <mat-sidenav-content fxLayout="column" fxLayoutAlign="space-between">
+      <div class="content" fxLayout="row" fxFlex="1 0 auto" fxLayoutAlign="center center">
+         <router-outlet></router-outlet> 
+      </div>
+      <div class="footer" fxLayout="row" fxLayoutAlign="center center"><h3 class="mat-h3">Footer</h3></div>
+    </mat-sidenav-content>
+  </mat-sidenav-container> 
+</div> 
+

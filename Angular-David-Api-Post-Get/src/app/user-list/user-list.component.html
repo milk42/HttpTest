@@ -1,0 +1,11 @@
+<div fxLayoutAlign="space-between ">
+<mat-list>
+  <mat-list-item *ngFor = "let u of users$ | async">
+    <a href="" [routerLink]="u.id" >{{u.name}}</a> {{u.title}}</mat-list-item>
+</mat-list>
+
+
+<mat-card>
+<router-outlet></router-outlet>
+</mat-card>
+</div>
